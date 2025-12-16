@@ -1,0 +1,17 @@
+<div class="record-card">
+  <div class="record-header">
+    <h4>{{ record.type }}</h4>
+    <span class="record-date">{{ record.date }}</span>
+  </div>
+
+  <p class="record-description">
+    {{ record.description || "No description provided." }}
+  </p>
+
+  <p class="record-vet"><strong>Vet:</strong> {{ record.vet || "N/A" }}</p>
+
+  <div class="record-actions">
+    <button class="edit-btn" (click)="onEdit()">Edit</button>
+    <button class="delete-btn" (click)="onDelete()">Delete</button>
+  </div>
+</div>

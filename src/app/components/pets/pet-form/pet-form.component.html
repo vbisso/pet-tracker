@@ -1,0 +1,39 @@
+<div class="pet-form-container">
+  <h2>{{ isEdit ? "Edit Pet" : "Add Pet" }}</h2>
+
+  <form (ngSubmit)="onSubmit()" class="pet-form">
+    <div class="form-group">
+      <label>Name</label>
+      <input
+        [(ngModel)]="pet.name"
+        name="name"
+        required
+        placeholder="Pet name"
+      />
+    </div>
+
+    <div class="form-group">
+      <label>Species</label>
+      <input
+        [(ngModel)]="pet.species"
+        name="species"
+        required
+        placeholder="Cat, Dog, etc."
+      />
+    </div>
+
+    <div class="form-group">
+      <label>Breed</label>
+      <input [(ngModel)]="pet.breed" name="breed" placeholder="Optional" />
+    </div>
+
+    <div class="form-group">
+      <label>Birthdate</label>
+      <input type="date" [(ngModel)]="pet.birthdate" name="birthdate" />
+    </div>
+
+    <button type="submit" class="submit-btn">
+      {{ isEdit ? "Update Pet" : "Create Pet" }}
+    </button>
+  </form>
+</div>

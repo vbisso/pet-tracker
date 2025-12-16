@@ -1,0 +1,39 @@
+<div class="record-form-container">
+  <h2>{{ isEdit ? "Edit Record" : "Add Record" }}</h2>
+
+  <form (ngSubmit)="onSubmit()" class="record-form">
+    <div class="form-group">
+      <label>Type</label>
+      <input
+        [(ngModel)]="record.type"
+        name="type"
+        required
+        placeholder="Vaccination, Checkup, Medication"
+      />
+    </div>
+
+    <div class="form-group">
+      <label>Description</label>
+      <textarea
+        [(ngModel)]="record.description"
+        name="description"
+        rows="3"
+        placeholder="Additional details"
+      ></textarea>
+    </div>
+
+    <div class="form-group">
+      <label>Date</label>
+      <input type="date" [(ngModel)]="record.date" name="date" required />
+    </div>
+
+    <div class="form-group">
+      <label>Vet Name</label>
+      <input [(ngModel)]="record.vet" name="vet" placeholder="Optional" />
+    </div>
+
+    <button type="submit" class="submit-btn">
+      {{ isEdit ? "Update Record" : "Create Record" }}
+    </button>
+  </form>
+</div>

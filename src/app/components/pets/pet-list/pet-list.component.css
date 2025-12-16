@@ -1,0 +1,76 @@
+.pet-list-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 1.5rem;
+}
+
+.header-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+h2 {
+  margin: 0;
+  font-size: 1.8rem;
+  font-weight: bold;
+}
+
+.add-btn {
+  background-color: #3f51b5;
+  color: white;
+  border: none;
+  padding: 0.6rem 1.2rem;
+  border-radius: 6px;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: background-color 0.25s ease;
+}
+
+.add-btn:hover {
+  background-color: #303f9f;
+}
+
+.empty-state {
+  text-align: center;
+  margin-top: 2rem;
+  font-size: 1.1rem;
+  color: #666;
+}
+
+.pet-grid {
+  margin-top: 1.5rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 1rem;
+}
+
+.pet-card {
+  background: white;
+  border: 1px solid #ddd;
+  padding: 1rem;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: box-shadow 0.25s ease, transform 0.2s ease;
+}
+
+.pet-card:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+  transform: translateY(-2px);
+}
+
+.pet-card h3 {
+  margin: 0 0 0.25rem 0;
+  font-size: 1.2rem;
+}
+
+.pet-card .species {
+  font-weight: bold;
+  color: #3f51b5;
+  margin-bottom: 0.2rem;
+}
+
+.pet-card .breed {
+  color: #666;
+  font-size: 0.9rem;
+}

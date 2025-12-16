@@ -1,0 +1,36 @@
+<div *ngIf="pet" class="pet-details-container">
+  <!-- Pet Info Card -->
+  <div class="pet-info-card">
+    <div class="pet-header">
+      <h2>{{ pet.name }}</h2>
+      <button class="edit-btn" (click)="onEditPet()">Edit Pet</button>
+    </div>
+
+    <div class="pet-info">
+      <p><strong>Species:</strong> {{ pet.species }}</p>
+      <p><strong>Breed:</strong> {{ pet.breed }}</p>
+      <p><strong>Birthdate:</strong> {{ pet.birthdate }}</p>
+    </div>
+  </div>
+
+  <!-- Records Section -->
+  <div class="records-section">
+    <div class="records-header">
+      <h3>Medical Records</h3>
+      <button class="add-btn" (click)="onAddRecord()">+ Add Record</button>
+    </div>
+
+    <div *ngIf="records.length === 0" class="empty-state">
+      <p>No medical records yet.</p>
+    </div>
+
+    <div class="records-list">
+      <app-record-item
+        *ngFor="let r of records"
+        [record]="r"
+        (deleted)="loadRecords()"
+      >
+      </app-record-item>
+    </div>
+  </div>
+</div>
